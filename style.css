@@ -14,6 +14,8 @@ body {
 
 
 .grid-container {
+    margin-left: 15%;
+    width: 85%;
     max-height: 100px;
     display: grid;
     gap: 20px;
@@ -83,9 +85,10 @@ a:hover {
 
 .sidebar {
     height: 100vh;
-    width: 160px;
+    width: 15%;
     background-color: #111;
     padding-top: 20px;
+    position: fixed; 
 }
 
 .sidebar a {
