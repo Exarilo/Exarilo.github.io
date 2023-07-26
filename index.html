@@ -4,9 +4,109 @@
     <title>Exarilo Projects</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+    <div class="container">
+        <div class="sidebar">
+            <h2 class="sidebar-title">Filter</h2>
+            <hr>
+            <div class="filter-category">
+                <h3 class="filter-category-text">Language</h3>
+                <label><input type="checkbox" name="language" value="csharp"> C#</label>
+                <label><input type="checkbox" name="language" value="python"> Python</label>
+                <label><input type="checkbox" name="language" value="javascript"> JavaScript</label>
+                <label><input type="checkbox" name="language" value="arduino"> Arduino</label>
+                <label><input type="checkbox" name="language" value="dart"> Dart</label>
+                <label><input type="checkbox" name="language" value="java"> Java</label>
+            </div>
+            <hr>
+            <div class="filter-category">
+                <h3 class="filter-category-text">Progress</h3>
+                <label><input type="checkbox" name="progress" value="experimental"> Experimental</label>
+                <label><input type="checkbox" name="progress" value="ongoing"> In progress</label>
+                <label><input type="checkbox" name="progress" value="finished"> Finished</label>
+            </div>
+            <hr>
+   
+            <div class="filter-category">
+                <h3 class="filter-category-text">Difficulty Rating</h3>
+                <input type="checkbox" id="AllRating" name="AllRating" value="All" checked/><label for="AllRating" title="Toutes les difficultés">All</label>
+                <div class="rating">
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
+                </div>
+            </div>
+            <hr>
+            <div class="filter-category">
+                <h3 class="filter-category-text">Accessibility</h3>
+                <label><input type="checkbox" name="repoStatus" value="public"> Public</label>
+                <label><input type="checkbox" name="repoStatus" value="private"> Private</label>
+            </div>
+        </div>
+      
+
     <div class="grid-container">
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>Arduino</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+            </div>
+        </a>
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>Games</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+                <div class="tags">
+                    <span class="tag language">C#</span>
+                    <span class="tag progression">in progress</span>
+                    <span class="tag difficulty">3&#9733;</span>
+                    <span class="tag privacy">&#128274;</span>
+                </div>
+            </div>
+        </a>
+        
+        
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>Reusable Code</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+            </div>
+        </a>
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>SocialNetworks</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+            </div>
+        </a>
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>Tools</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+            </div>
+        </a>
+        <a href="routes/school.html" class="card"> 
+            <div class="card-content">
+                <h2>Web</h2>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="Explorer">
+                </div>
+            </div>
+        </a>
         <a href="routes/mobile.html" class="card"> 
             <div class="card-content">
                 <h2>Mobile</h2>
@@ -24,5 +124,6 @@
             </div>
         </a>
     </div>
+</div>
 </body>
 </html>

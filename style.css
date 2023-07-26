@@ -5,22 +5,20 @@
 }
 
 body {
-    font: 1em/1.618 Inter, sans-serif;
-    min-height: 100vh;
-    padding: 30px;
-    color: #224;
     background:
         url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
         center / cover no-repeat fixed;
 }
 
+
 .grid-container {
     display: grid;
     gap: 20px;
     padding: 30px;
+    flex: 1; /* The main content will occupy the remaining space */
 }
-
 .card {
+    font: 1em/1.618 Inter, sans-serif;;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
@@ -30,7 +28,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.05); 
+    transform: scale(1.02); 
 }
 
 
@@ -73,4 +71,125 @@ a {
 a:hover {
     text-decoration: none; 
     color: #3366ff; 
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+
+.sidebar {
+    width: 160px;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+.sidebar-title {
+    color: #df811c;
+    margin-right: 30px;
+    text-align: center;
+}
+
+
+hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.filter-category {
+    color: white;
+    margin: 20px;
+    text-align: left;
+}
+
+.filter-category h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.filter-category label {
+    display: block;
+    margin-bottom: 5px;
+}
+.rating {
+    direction: rtl;
+    display: flex;
+    justify-content: left;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 15px;
+    color: #ddd;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.rating label:before {
+    content: "\2605"; /* Unicode character for a star */
+}
+
+.rating input:checked ~ label {
+    color: orange;
+}
+
+#AllRating + label {
+    display: inline;
+    padding: 5px;
+}
+.filter-category-text{
+    color: #c55959;
+}
+
+
+/* Autres styles pour la carte et son contenu */
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.tag.language {
+    background-color: #c55959;
+    color: #fff;
+}
+
+.tag.progression {
+    background-color: #3e874b;
+    color: #fff;
+}
+
+.tag.difficulty {
+    background-color: #5733FF;
+    color: #fff;
+}
+
+.tag:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+.tag.privacy {
+    background-color: #000000;
+    color: #333;
 }
