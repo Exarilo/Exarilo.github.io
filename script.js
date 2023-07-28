@@ -90,11 +90,35 @@ function difficultyClickHandler() {
     });
   }
 
-function init() {
-    associateTagsWithCards();
-    attachFilterEvents();
-    difficultyClickHandler()
-    filterCards(); 
-}
+
+  function filterCardsBySearchTerm() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const projectCards = document.querySelectorAll('.card');
+    projectCards.forEach((card) => {
+        const projectName = card.querySelector('h2').textContent.toLowerCase();
+        if (projectName.includes(searchInput)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+  }
+  
+  function init() {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+              filterCardsBySearchTerm();
+          }
+      });
+  
+      document.getElementById('searchButton').addEventListener('click', filterCardsBySearchTerm);
+      associateTagsWithCards();
+      attachFilterEvents();
+      difficultyClickHandler()
+      filterCards(); 
+  }
+  
+
 
 document.addEventListener('DOMContentLoaded', init);
