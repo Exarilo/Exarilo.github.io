@@ -3,7 +3,6 @@ const cardTagsList = [];
 function filterCards() {
     const languageFilters = document.querySelectorAll('input[name="language"]:checked');
     const progressFilters = document.querySelectorAll('input[name="progress"]:checked');
-    const difficultyFilter = document.querySelectorAll('input[name="rating"]:checked');
     const accessibilityFilters = document.querySelectorAll('input[name="repoStatus"]:checked');
     const difficultyFilters = document.querySelectorAll('input[name="rating"]:checked');
 
@@ -25,7 +24,7 @@ function filterCards() {
         const isVisibleLanguage = languageFiltersArray.length === 0 || languageTags.some(tag => languageFiltersArray.some(filter => filter.value.toLowerCase() === tag.toLowerCase()));
         const isVisibleProgress = progressFiltersArray.length === 0 || progressFiltersArray.some(filter => filter.value.toLowerCase() === progressTag.toLowerCase());
         const isVisibleDifficulty = (difficultyValue === "all" || (difficultyTag && difficultyTag[0] === difficultyValue)) || false;
-        const isVisibleAccessibility = accessibilityFiltersArray.length === 0 || accessibilityFiltersArray.some(filter => filter.value === privacyTag);
+        const isVisibleAccessibility = accessibilityFiltersArray.length === 0 || accessibilityFiltersArray.some(filter => filter.value?.toLowerCase() === privacyTag?.toLowerCase());
 
         cardElement.style.display = (isVisibleLanguage && isVisibleProgress && isVisibleDifficulty && isVisibleAccessibility) ? 'block' : 'none';
     });
@@ -53,9 +52,6 @@ function attachFilterEvents() {
 }
 document.addEventListener('DOMContentLoaded', init);
 
-
-
-
 function associateTagsWithCards() {
     const projectCards = document.querySelectorAll('.card');
 
@@ -63,14 +59,13 @@ function associateTagsWithCards() {
         const languageTags = Array.from(card.querySelectorAll('.tag.language')).map(tag => tag.textContent);
         const progressTag = card.querySelector('.tag.progression')?.textContent || null;
         const difficultyTag = card.querySelector('.tag.difficulty')?.textContent || null;
-        const privacyTag = card.querySelector('.tag.privacy')?.textContent || null;
-
+        var privacyTag = card.querySelector('.tag.privacy')?.textContent ==='🔒'?"private":"public";
         cardTagsList.push({
             cardElement: card,
             languageTags: languageTags,
             progressTag: progressTag,
             difficultyTag: difficultyTag,
-            privacyTag: privacyTag
+            privacyTag: privacyTag 
         });
     });
 }
@@ -94,9 +89,6 @@ function difficultyClickHandler() {
       });
     });
   }
-  
-  
-  
 
 function init() {
     associateTagsWithCards();
