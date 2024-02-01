@@ -49,7 +49,6 @@ function attachFilterEvents() {
         filterCards();
     });
 }
-document.addEventListener('DOMContentLoaded', init);
 
 function associateTagsWithCards() {
     const projectCards = document.querySelectorAll('.card');
@@ -111,12 +110,18 @@ function difficultyClickHandler() {
               filterCardsBySearchTerm();
           }
       });
+      const publicFilterCheckbox = document.querySelector('input[name="repoStatus"][value="public"]');
+      if (publicFilterCheckbox) {
+          publicFilterCheckbox.checked = true;
+      }
+  
   
       document.getElementById('searchButton').addEventListener('click', filterCardsBySearchTerm);
       associateTagsWithCards();
       attachFilterEvents();
       difficultyClickHandler()
       filterCards(); 
+
   }
   
 
