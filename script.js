@@ -25,7 +25,6 @@ function filterCards() {
         const isVisibleProgress = progressFiltersArray.length === 0 || progressFiltersArray.some(filter => filter.value.toLowerCase() === progressTag.toLowerCase());
         const isVisibleDifficulty = (difficultyValue === "all" || (difficultyTag && difficultyTag[0] === difficultyValue)) || false;
         const isVisibleAccessibility = accessibilityFiltersArray.length === 0 || accessibilityFiltersArray.some(filter => filter.value?.toLowerCase() === privacyTag?.toLowerCase());
-
         cardElement.style.display = (isVisibleLanguage && isVisibleProgress && isVisibleDifficulty && isVisibleAccessibility) ? 'block' : 'none';
     });
 }
@@ -59,7 +58,8 @@ function associateTagsWithCards() {
         const languageTags = Array.from(card.querySelectorAll('.tag.language')).map(tag => tag.textContent);
         const progressTag = card.querySelector('.tag.progression')?.textContent || null;
         const difficultyTag = card.querySelector('.tag.difficulty')?.textContent || null;
-        var privacyTag = card.querySelector('.tag.privacy')?.textContent ==='🔒'?"private":"public";
+        var privacyTag = card.querySelector('.tag.privacy')?.textContent === '\uD83D\uDD12' ? "private" : "public";
+
         cardTagsList.push({
             cardElement: card,
             languageTags: languageTags,
